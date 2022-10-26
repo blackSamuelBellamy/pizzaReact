@@ -1,0 +1,175 @@
+.mainHome {
+    width: 100vw;
+    height: 100vh;
+    background: url(../sources/wallpaper.jpg);
+    background-position-x: center;
+    background-position-y: 40%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: .7s;
+    position: relative;
+}
+
+.column {
+    display: block;
+    width: 25vw;
+    height: 100%; 
+    background-color: #000;
+    z-index: 3;
+    position: absolute;
+    animation: moving 1s linear calc(var(--i) * .25s) forwards;
+    top: -100%;
+    left: calc(var(--i) * 25%);
+    opacity: 0;
+}
+
+@keyframes moving {
+    0% {
+        top: -100%;
+        opacity: 0;
+    }
+
+    50% {
+        top: 50%;
+        opacity: .8;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 1;
+    }
+}
+
+
+h1 {
+    color: #fff;
+    font-family: poppins;
+    position: absolute;
+    top: 33%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 2px;
+    text-shadow: 1.3px 1.3px #000;
+
+}
+
+.mainHome p {
+    font-family: montserrat;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 1.1px 1.1px #000;
+    position: absolute;
+    top: 57%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 1px;
+}
+
+.icons {
+    position: absolute;
+    left: 80%;
+    top: 72%;
+    transform: translate(-50%, -50%) scale(1.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10em;
+    height: 2em;
+    color: #fff;
+    
+        
+}
+
+.icon {
+    cursor: pointer;
+    transition: .3s;
+}
+
+.icon:hover {
+    left: 50%;
+    top: 50%;
+    transform: scale(1.35);
+}
+
+.mainHome button {
+    position: absolute;
+    left: 70%;
+    top: 80%;
+    outline: none;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    width: 10em;
+    height: 3em;
+    letter-spacing: 1px;
+    font-family: poppins;
+    font-weight: 700;
+    text-shadow: 1.1px 1.1px #000;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .5s;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainHome button:hover {
+    background: rgba(0, 0, 0, .5);
+}
+
+
+
+.pizzaIcon {
+    position: absolute;
+    top: 27%;
+    left: 90%;
+    transform: scale(4.5);
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    
+    h1 {
+        color: #FFF;
+        text-shadow: 2px 2px #000;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 13%;
+    }
+
+    .pizzaIcon {
+        left: 50%;
+        top: 35%;
+        color: #000;
+    }
+
+    .mainHome p {
+        top: 50%;
+        left: 50%;
+        color: #000;
+        text-shadow: 1.3px 1.3px #fff;
+        background: rgba(255, 255, 255, .5);
+    }
+
+    .icons {
+        left: 50%;
+        top: 66%;
+        background: rgba(0, 0, 0, .5);
+        padding: 0 5px;
+    }
+
+    .mainHome button {
+        left: 50%;
+        top: 78%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (min-width: 600px)and (max-width: 900px) {
+    .pizzaIcon {
+        left: 55%;
+        top: 35%;
+        color: #000;
+    }
+}

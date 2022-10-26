@@ -1,0 +1,232 @@
+.pizzaContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    z-index: 1;
+    animation: appearing 1s linear forwards;
+    opacity: .3;
+    overflow-x: hidden;
+
+}
+
+@keyframes appearing {
+    from {
+        opacity: .3;
+        background-position-x: 90%;
+    }
+
+    to {
+        opacity: 1;
+        background-position-x: 100%;
+    }
+}
+
+.layer {
+    position: absolute;
+    z-index: 1;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100vw;
+    min-height: 100vh;
+    max-height: 100vh;
+    background: url(../sources/secondWallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.pizzaCanvas {   
+    width: 70%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1%;
+    position: relative;
+
+} 
+
+.information {
+    position: absolute;
+    z-index: 2;
+    top: 76%;
+    left: 65%;
+    width: 13em;
+    height: 5em;
+
+}
+
+
+.direccion { 
+    color: #fff;
+    font-family: poppins;
+}
+
+.locationIcon {
+    color: #fff;
+    transform: scale(1.5);
+    position: absolute;
+    left: 90%;
+    top: 60%;
+}
+
+.swiperContainer {
+    width: 33em;
+    height: 80vh;
+    position: relative;
+}
+
+
+.cardContainer {
+    width: 20em;
+    height: 90%;
+    position: relative;
+    top: 10%;
+}
+
+
+.card {
+
+    position: relative;
+    width: 20em;
+    height: 90%; 
+    background: rgba(255, 255, 255, .7);   
+    backdrop-filter: blur(10px);
+    
+}
+
+.imageContainer {
+    width: 20em;
+    height: 50%;
+    position: relative;
+    top: 0;
+}
+
+.imageContainer img {
+    width: 20em;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card h3 {
+    position: relative;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    font-family: poppins;
+    color: #3F7B85;
+    text-shadow: 1px 1px #000;
+    letter-spacing: 1px;
+
+}
+
+
+.card h4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .8);
+    width: 5em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.ingredients {
+    width: 100%;
+    height: 3em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: montserrat;
+    padding: 0 10px;
+}
+
+.buttons {
+    width: 100%;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    gap: 25%;
+    position: relative;
+    top: 5%;
+    left: 0%;
+}
+
+.buttons button {
+    width: 5em;
+    outline: none;
+    border: none;
+    font-family: poppins;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+.buttons button:first-of-type {
+    background: #53C4D6;
+    color: #000;
+    text-shadow: .3px .3px #000;
+}
+
+.buttons button:hover {
+    background: #fff;
+    box-shadow: 0 0 3px #fff, 3px 6px 12px #fff;
+    color: #002;
+    border: #000 2px solid;
+    font-weight: 700;
+}
+
+@media(max-width: 1000px) {
+    .information {
+        transform: scale(.8);
+        left: 74%;
+    }
+}
+
+@media(max-width: 700px) {
+    .layer {
+        background-position-x: left;
+    }
+
+    .swiperContainer {
+        left: -10%;
+    }
+
+    .information {
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, .5);
+        width: 15em
+    }
+
+    .card {
+        height: 65%;
+        top: 20%;
+    }
+}
+
+@media (max-width: 400px) {
+    .swiperContainer {
+        left: -16%;
+    }
+}
+
+
+   

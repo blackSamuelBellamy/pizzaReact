@@ -1,0 +1,15 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: poppins;
+  src: url(../sources/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: montserrat;
+  src: url(../sources/Montserrat-VariableFont_wght.ttf);
+}

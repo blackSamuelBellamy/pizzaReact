@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { States } from './hooks/DataContext';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Planilla from './components/Planilla';
+import CarShop from './views/CarShop';
+import PizzaCanvas from './views/PizzaCanvas'
+import Pizza from './views/Pizza';
+import Home from './views/Home';
+import './css/App.css'
 
-function App() {
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <States>
+       <BrowserRouter>
+       <Routes>
+        <Route path='/' element = {<Planilla />}>
+          <Route index element = {<Home />} />
+          <Route path='/Home' element= {<Home />} />
+          <Route path='/PizzaCanvas' element= {<PizzaCanvas />} />
+          <Route path='/PizzaCanvas/:pizza' element= {<Pizza />} />
+          <Route path='/CarShop' element= {<CarShop />} />
+        </Route>
+       </Routes>
+       </BrowserRouter>
+      </States>
     </div>
-  );
+  )
 }
 
 export default App;

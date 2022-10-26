@@ -1,0 +1,120 @@
+.choosenPizza {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background: #002;
+    overflow: hidden;
+    animation: third 1s linear forwards;
+}
+
+.choosenPizzaIcon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scale(4);
+    color: #fff;
+    top: 15%;
+    animation: third 1s linear forwards;
+}
+
+.wallpaperContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(../sources/thirdWallpaper.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: .3s;
+}
+
+
+.pizzaTitle {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%);
+    font-family: poppins;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    font-size: 3em;
+    background: rgba(0, 0, 0, .4);
+    width: 8em;
+    text-align: center;
+    border-radius: 10px;
+    animation: third 1s linear forwards;
+    opacity: 0;
+}
+
+.description {
+    min-height: 30px;
+    width: 25em;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: montserrat;
+    background: rgba(255, 255, 255, .3);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    top: 45%;
+    animation: third 1s linear forwards;
+    opacity: 0;
+}
+
+.volver {
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    transform: translateX(-50%);
+    width: 6em;
+    height: 2.5em;
+    color: #fff;
+    text-decoration: none;
+    font-family: poppins;
+    text-shadow: 1px 1px 1px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0, .6);
+    transition: .4s;
+    animation: third 1s linear forwards;
+    opacity: 0;
+}
+
+.volver:hover {
+    background: rgba(255, 255, 255, .4);
+    backdrop-filter: blur(15px);
+    color: #000;
+    border: none;
+}
+
+@keyframes third {
+    0%{
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media(max-width: 450px) {
+    .choosenPizzaIcon {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) scale(5);
+        color: #fff;
+        top: 15%;
+    }
+
+
+    .description {
+        width: 20em;
+    }
+}

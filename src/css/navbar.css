@@ -1,0 +1,109 @@
+.navBar, .zero {
+    width: 40%;
+    height: 40px;
+    background: linear-gradient(to right, rgba(0, 0, 34, .4), rgb(0, 0, 34));
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3%;
+    position: fixed;
+    top: 5%;
+    right: 10%;
+    border-radius: 25px;
+    transition: .5s;
+    z-index: 5;
+}
+
+
+.zero {
+    background: #000;
+    width: 1em;
+    transition: .5s;
+}
+
+.zero:hover {
+    background: linear-gradient(to left, rgba(0, 0, 34, .6), rgba(0, 0, 34, 1));
+}
+
+.carShop{
+    transform: scale(1.9);
+    color: #fff;
+    position: absolute;
+    cursor: pointer;
+    left: 10%;
+    top: 30%;
+}
+
+.zero .carShop {
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.9);
+}
+
+
+.pop {
+    display: block;
+    position: absolute;
+    background-color: red;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    left: 15%;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .6s;
+    font-family: poppins;
+    font-size: .7em;
+    color: #fff;
+}
+
+
+
+.noHover {
+    cursor: auto;
+
+}
+
+.navBar p {
+    position: absolute;
+    right: 45%;
+    font-family: poppins;
+}
+
+.total {
+    display: block;
+    position: absolute;
+    right: -90%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 900px) {
+    .navBar {
+        width: 20em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .zero {
+        width: 4em;
+    }
+
+    .pop {
+        left: 18%;
+    }
+
+    .navBar p {
+        left: 27%;
+        font-size: 1em;
+        width: 6em;
+    }
+
+    .total {
+        left: 120%;
+    }
+}
