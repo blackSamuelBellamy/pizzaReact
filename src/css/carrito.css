@@ -8,6 +8,7 @@
     align-items: center;
     flex-direction: column;
     position: relative;
+    overflow-x: hidden;
 }
 
 .carrito h2 {
@@ -85,4 +86,58 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    width: 7em;
+}
+
+.leftFading {
+    animation: movingLeft 1s ease-out forwards;
+    transition: .5s;
+}
+
+.zeroPizzas {
+    animation: fadingBox 1s linear forwards;
+    transition: .5s;
+    opacity: 1;
+}
+
+@keyframes fadingBox {
+    0% {
+        opacity: 1;
+    }
+
+    97% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes movingLeft {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -200%;
+    }
+}
+
+
+.rightFading {
+    position: relative;
+    animation: movingRight 1s ease-out forwards;
+    transition: .5s;
+}
+
+@keyframes movingRight {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 200%;
+    }
 }

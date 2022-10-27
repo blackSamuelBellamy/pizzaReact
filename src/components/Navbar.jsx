@@ -6,7 +6,7 @@ import '../css/navbar.css'
 
 const Navbar = () => {
 
-    const { total, carrito } = useContext(DataContext)
+    const { total, totalCantidad } = useContext(DataContext)
 
     const noHover = () => {
 
@@ -40,9 +40,9 @@ const Navbar = () => {
                     {
                         !noHover() ?
                             <Link to='/CarShop'>
-                                <span className='pop'>{carrito.length}</span>
+                                <span className='pop'>{totalCantidad}</span>
                             </Link> :
-                            <span className='pop'>{carrito.length}</span>
+                            <span className='pop'>{totalCantidad}</span>
                     }
                     <p>Precio total:<span className='total'>{`$${total.toLocaleString('en-US')}`}</span></p>
                 </>

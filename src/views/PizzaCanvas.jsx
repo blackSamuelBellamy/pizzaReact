@@ -13,7 +13,7 @@ import "swiper/css/pagination";
 const PizzaCanvas = () => {
 
     const { pizzas, carrito, setVerPizza,
-        setCarrito, setTotal } = useContext(DataContext)
+        setCarrito, setTotal, setTotalCantidad } = useContext(DataContext)
     const Navigate = useNavigate()
 
     const adding = obj => {
@@ -21,6 +21,7 @@ const PizzaCanvas = () => {
         const test = carrito
         test.push(pizzas[obj])
         setCarrito(test)
+        setTotalCantidad(carrito.length)
         const prices = carrito.map(a => a.price)
         const totalPrices = prices.reduce((a, b) => a + b)
         setTotal(totalPrices)
