@@ -11,12 +11,32 @@
     overflow-x: hidden;
 }
 
-.carrito h2 {
+.videoCarritoContainer {
+    width: 100%;
+    height: 100%;
     position: absolute;
-    left: 50%;
+}
+
+.videoCarritoContainer video {
+    opacity: .7;
+}
+
+.carritoTitle {
+    position: absolute;
+    left: 47%;
     transform: translateX(-50%);
     top: 20%;
     font-family: poppins;
+}
+
+.carritoTitle h2 {
+    text-align: center;
+}
+
+.titleQuantity {
+    position: absolute;
+    top: 0;
+    left: 108%;
 }
 
 .boxName {
@@ -32,6 +52,32 @@
     position: relative;
     top: 0%;
     font-family: montserrat;
+    background: rgba(255, 255, 255, .4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+.boxCantidad {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 2px;
+    width: 5em;
+    position: relative;
+}
+
+
+.iconOperatorBox {
+    background: #000;
+    width: 1m;
+    height: 1m;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .carrito .pizzaBox .pizzaName,
@@ -47,6 +93,10 @@
 
 .carrito .pizzaBox .pizzaName {
     align-items: flex-start;
+    font-size: 1em;
+    color: #000;
+    font-weight: 600;
+    font-family: montserrat;
 }
 
 .carritoButtons {
@@ -100,6 +150,16 @@
     opacity: 1;
 }
 
+.boxCantidad {
+    font-size: 1.2em;
+}
+
+.boxCantidad p {
+    font-family: montserrat;
+    color: #000;
+    font-weight: 600;
+}
+
 @keyframes fadingBox {
     0% {
         opacity: 1;
@@ -120,8 +180,14 @@
         left: 0;
     }
 
-    100% {
-        left: -200%;
+    95% {
+        left: -190%;
+
+    }
+
+    100%{
+        left: -500%;
+        display: none;
     }
 }
 
@@ -137,7 +203,12 @@
         left: 0;
     }
 
+    95% {
+        left: 300%;
+    }
+
     100% {
-        left: 200%;
+        left: 500%;
+        display: none;
     }
 }

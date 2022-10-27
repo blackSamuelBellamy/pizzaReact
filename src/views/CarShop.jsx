@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react"
 import { DataContext } from "../hooks/DataContext"
 import { Link } from 'react-router-dom'
+import { CgMathMinus, CgMathPlus } from 'react-icons/cg'
+import Video from '../sources/Pizza.mp4'
 import '../css/carrito.css'
 
 const CarShop = () => {
@@ -25,26 +27,33 @@ const CarShop = () => {
 
     const restar = (ind) => {
 
-        setCantidad({
-            ...cantidad,
-            [Object.keys(cantidad)[ind]]: Object.values(cantidad)[ind] - 1
-        })
+        if (Object.values(cantidad)[ind] > 0) {
 
-        const carritoCopy = carrito
-        const deleteItem = carritoCopy.findIndex(property => property.name ===
-            Object.keys(cantidad)[ind])
-        carritoCopy.splice(deleteItem, 1)
-        setCarrito(carritoCopy)
+            setCantidad({
+                ...cantidad,
+                [Object.keys(cantidad)[ind]]: Object.values(cantidad)[ind] - 1
+            })
 
-        if (carrito.length > 0) {
-            setTotalCantidad(carrito.length)
-            const precioTotal = carrito.map(pizza => pizza.price)
-                .reduce((a, b) => a + b)
+            const carritoCopy = carrito
+            const deleteItem = carritoCopy.findIndex(property => property.name ===
+                Object.keys(cantidad)[ind])
+            carritoCopy.splice(deleteItem, 1)
+            setCarrito(carritoCopy)
 
-            setTotal(precioTotal)
-        } else {
-            setTotal(0)
+            if (carrito.length > 0) {
+                setTotalCantidad(carrito.length)
+                const precioTotal = carrito.map(pizza => pizza.price)
+                    .reduce((a, b) => a + b)
+
+                setTotal(precioTotal)
+            } else {
+                setTotal(0)
+            }
         }
+        else {
+            return
+        }
+
 
     }
 
@@ -61,7 +70,7 @@ const CarShop = () => {
         setCarrito(copyCarrito)
         setTotalCantidad(carrito.length)
         const totalPrecio = carrito.map(pizza => pizza.price)
-        .reduce((a, b) => a + b)
+            .reduce((a, b) => a + b)
         setTotal(totalPrecio)
     }
 
@@ -72,8 +81,15 @@ const CarShop = () => {
 
     return (
         <div className='carrito'>
-            <h2>Total de pizzas: {carrito.length}</h2>
-            <div className={carrito.length === 0 ? 'pizzaBox zeroPizzas': 'pizzaBox'}>
+            <div className="videoCarritoContainer">
+                <video  src={Video} muted loop autoPlay={true} />
+            </div>
+            <div className="carritoTitle">
+                <h2>Total de pizzas: </h2><h2 className="titleQuantity">
+                    {carrito.length}
+                </h2>
+            </div>
+            <div className={carrito.length === 0 ? 'pizzaBox zeroPizzas' : 'pizzaBox'}>
                 <div className='pizzaName' >
                     {
 
@@ -81,14 +97,7 @@ const CarShop = () => {
                         (
                             <div className={fading(index) ? 'boxName leftFading' : 'boxName'}
                                 key={index}>
-
-                                <button onClick={() => restar(index)}
-                                    disabled={fading(index)}
-                                >restar
-                                </button>
-
                                 <p>{pizza}</p>
-                                <button onClick={() => sumar(index)}>Sumar</button>
                             </div>
                         ))
                     }
@@ -97,10 +106,19 @@ const CarShop = () => {
 
                     {
                         Object.values(cantidad).map((cantidad, index) =>
-                            <p key={index}
-                                className={fading(index) && 'rightFading'}>
-                                {cantidad}
-                            </p>)
+                            <div key={index} className={fading(index) ?
+                                'boxCantidad rightFading' : 'boxCantidad'}>
+
+                                <div className="iconOperatorBox">
+                                    <CgMathMinus onClick={() => restar(index)} />
+                                </div>
+                                <p>
+                                    {cantidad}
+                                </p>
+                                <div className="iconOperatorBox">
+                                    <CgMathPlus onClick={() => sumar(index)} />
+                                </div>
+                            </div>)
                     }
 
                 </div>
