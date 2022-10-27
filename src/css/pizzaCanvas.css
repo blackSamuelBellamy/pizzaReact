@@ -184,7 +184,9 @@
 }
 
 .buttons button:hover {
-    background: #fff;
+    background: rgba(255, 255, 255, .4);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     box-shadow: 0 0 3px #fff, 3px 6px 12px #fff;
     color: #002;
     border: #000 2px solid;
@@ -223,7 +225,12 @@
 
 @media (max-width: 400px) {
     .swiperContainer {
-        left: -16%;
+       
+        left: -10%;
+    }
+
+    .card {
+        transform: scale(.9);
     }
 }
 

@@ -13,12 +13,16 @@
 
 .videoCarritoContainer {
     width: 100%;
-    height: 100%;
-    position: absolute;
+    min-height: 100%;
+    position: fixed;
+    overflow: hidden;
 }
 
 .videoCarritoContainer video {
     opacity: .7;
+    object-fit: contain;
+    position: relative;
+    min-height: 100vh;
 }
 
 .carritoTitle {
@@ -160,6 +164,30 @@
     font-weight: 600;
 }
 
+.menos {
+    background: rgba(173, 24, 24, .4);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 50%;
+}
+
+.menos:hover {
+    box-shadow: 0 0 5px rgba(173, 24, 24, .8), 5px 5px 25px rgba(173, 24, 24, .8),
+    25px 25px 100px rgba(173, 24, 24, .8);
+}
+
+.mas {
+    background: rgba(20, 20, 204, .4);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 50%;
+}
+
+.mas:hover {
+    box-shadow: 0 0 5px rgba(20, 20, 204, .8), 5px 5px 25px rgba(20, 20, 204, .8),
+    25px 25px 100px rgba(20, 20, 204, .4) ;
+}
+
 @keyframes fadingBox {
     0% {
         opacity: 1;
@@ -210,5 +238,24 @@
     100% {
         left: 500%;
         display: none;
+    }
+}
+
+@media(max-width: 600px) {
+  .pizzaBox {
+    width: 80vw;
+  }
+
+  .carritoButtons {
+    width: 80vw;
+    justify-content: space-around;
+  }
+
+}
+
+@media(max-width: 450px) {
+    .pizzaBox {
+        font-size: .9em;
+        width: 95vw;
     }
 }
